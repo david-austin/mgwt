@@ -100,9 +100,9 @@ public class MGWT {
 
       LinkElement iconUrlLinkElement = Document.get().createLinkElement();
       if (settings.isAddGlosToIcon()) {
-        iconUrlLinkElement.setRel("apple-touch-startup-image");
+        iconUrlLinkElement.setRel("apple-touch-icon");
       } else {
-        iconUrlLinkElement.setRel("apple-touch-startup-image-precomposed");
+        iconUrlLinkElement.setRel("apple-touch-icon-precomposed");
       }
 
       iconUrlLinkElement.setHref(settings.getIconUrl());
