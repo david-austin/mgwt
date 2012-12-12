@@ -285,9 +285,10 @@ public class Html5ManifestServletBase extends HttpServlet {
 
       Map<String, List<BindingProperty>> map = permutationProvider.getBindingProperties(fileInputStream);
       for (Entry<String, List<BindingProperty>> entry : map.entrySet()) {
-        List<BindingProperty> value = entry.getValue();
-        if (value.containsAll(computedBindings) && value.size() == computedBindings.size()) {
-          return entry.getKey();
+    	String manifestName = entry.getKey();
+        List<BindingProperty> manifestProperties = entry.getValue();
+        if (computedBindings.containsAll(manifestProperties) ) {
+          return manifestName;
         }
       }
       return null;
